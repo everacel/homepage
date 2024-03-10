@@ -1,0 +1,187 @@
+.home {
+}
+
+.head {
+  z-index: 9;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.body {
+  padding-top: 12px;
+}
+
+.main {
+  width: 100%;
+  padding: 0 24px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.header-main {
+  composes: main;
+  height: 100%;
+}
+
+.headers {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menus {
+  flex: 0 0 auto;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.menu {
+  flex: 0 0 auto;
+  color: var(--theme-color);
+  font-size: 16;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+.menu:hover {
+  opacity: 0.8;
+}
+
+.body-main {
+  composes: main;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.body-main section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.body-main section h3 {
+  font-size: 24px;
+}
+.body-main section h4 {
+  font-size: 20px;
+}
+.body-main section p {
+  margin: 12px 0;
+}
+.body-main section hr {
+  margin: 20px 0;
+}
+
+.sec-title {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sec-padding {
+  margin-top: 12px;
+}
+.biz-section {
+  margin-top: 24px;
+  /* color: var(--theme-color); */
+  /* font-size: 16px;
+  font-weight: bold; */
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.biz-title {
+  flex: 0 0 120px;
+  min-width: 0;
+  border: 8px solid var(--theme-color);
+  border-radius: 20px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--theme-color);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  line-height: 2;
+}
+
+.grid:nth-child(2n + 1) {
+  background-color: var(--theme-color-alpha-lighter);
+}
+
+.grid > * {
+  padding: 12px 24px;
+}
+
+.form-grid {
+  padding: 12px 0;
+  display: grid;
+  grid-template-columns: 20% 40% auto;
+  column-gap: 8px;
+  line-height: 2;
+}
+
+.form-grid input {
+  padding: 0 8px;
+  height: 32px;
+  width: 100%;
+  background: var(--theme-color-alpha-lighter);
+  border: 0;
+  outline: 0;
+  color: var(--text-color);
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 32px;
+}
+
+.form-grid textarea {
+  padding: 0 8px;
+  min-height: 32px;
+  width: 100%;
+  background: var(--theme-color-alpha-lighter);
+  border: 0;
+  outline: 0;
+  color: var(--text-color);
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 32px;
+  font-family: inherit;
+}
+
+.submit {
+  width: 100%;
+  height: 40px;
+  border-radius: 4px;
+  background: var(--theme-color);
+  color: #ffffff;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.submit:hover {
+  background: var(--theme-color-alpha-darker);
+}
+
+.error {
+  color: var(--error-color);
+}

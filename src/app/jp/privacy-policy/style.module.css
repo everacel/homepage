@@ -1,0 +1,16 @@
+.policy {
+  width: 100%;
+  padding: 20px;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.policy h2 {
+  margin: 20px 0;
+}
+.policy h4 {
+  margin: 16px 0;
+}
+.policy p {
+  margin: 12px 0;
+}
