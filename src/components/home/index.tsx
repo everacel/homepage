@@ -13,6 +13,7 @@ import Dialog from "rc-dialog";
 import "rc-dialog/assets/index.css";
 
 const TABS = ["BUSINESS", "COMPANY", "CONTACT"];
+const HeadHeight = 80;
 
 export default function Home(props: {
   content: Record<string, React.ReactNode>;
@@ -32,7 +33,7 @@ export default function Home(props: {
     ) as HTMLTitleElement;
     if (title) {
       const top = title.offsetTop;
-      document.body.scrollTo({ top: top - 60, behavior: "smooth" });
+      document.body.scrollTo({ top: top - HeadHeight, behavior: "smooth" });
     }
   });
 
@@ -99,7 +100,7 @@ export default function Home(props: {
 
   return (
     <div className={styles.home}>
-      <div className={styles.head}>
+      <div className={styles.head} style={{ height: HeadHeight }}>
         <div className={styles["header-main"]}>
           <div className={styles.headers}>
             <div className={styles.title}>
