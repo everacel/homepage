@@ -1,0 +1,42 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Deploy
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: [ubuntu-latest]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          clean: false # not clean node_modules
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.x
+          # cache: pnpm # will be failed
+      - name: Install Dependencies
+        run: npm i
+
+      - name: Build Project
+        run: npm run build
+
+      - name: Release Dev
+        uses: wxul/aws-s3-sync-action@v1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_GITHUB_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_GITHUB_SECRET_ACCESS_KEY }}
+          AWS_REGION: ap-northeast-1
+        with:
+          aws_bucket_name: "www.everacel.com"
+          aws_cloudfront_distribution_id: "E668XSKEN397S"
+          source: "./dist"
+          aws_bucket_acl: "private"
+          if_has_failed: "fail"
