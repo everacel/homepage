@@ -7,7 +7,7 @@ export default function Policy() {
     <div className={styles.policy}>
       <h2>個人情報保護方針</h2>
       <p>
-        Shenzhen Changjie International Logistics Co., Ltd.
+        Everacel Co., Ltd.
         <br />
         （以下、当社といいます。）では、個人情報の適切な保護のため、以下のような体制で臨んでいます。
       </p>
@@ -33,7 +33,7 @@ export default function Policy() {
       </p>
       <h4>このページについて</h4>
       <p>
-        当社は、より一層お客様の個人情報の保護を図るため、もしくは、法令の制定や変更等に伴い、プライバシーポリシーを変更することがあります
+        当社は、より一層お客様の個人情報の保護を図るため、もしくは、法令の制定や変更等に伴い、プライバシーポリシーを変更することがあります。
       </p>
     </div>
   );
