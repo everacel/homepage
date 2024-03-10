@@ -19,7 +19,7 @@ export function Footer() {
       <p>
         メール: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
       </p>
-      <Link href="/jp/privacy-policy" target="blank">
+      <Link href="/privacy-policy.html" target="blank">
         PRIVACY POLICY
       </Link>
     </div>
