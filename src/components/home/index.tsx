@@ -49,7 +49,7 @@ export default function Home(props: {
         params
       );
       if (res.data === "success") {
-        alert("Success!");
+        setVisible(true);
       }
     } catch (error: any) {
       setSubmitError(error.message);
@@ -291,7 +291,10 @@ export default function Home(props: {
         title={null}
         visible={visible}
         width={400}
-        onClose={() => setVisible(false)}
+        onClose={() => {
+          setVisible(false);
+          location.reload();
+        }}
       >
         <p style={{ paddingTop: 20 }}>
           送信いただきありがとうございます。私たちは出来るだけ早くご連絡いたします。電話とメールのチェックをお願いいたします。
