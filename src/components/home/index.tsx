@@ -225,11 +225,13 @@ export default function Home(props: {
             </div>
             <div>
               <p>
-                電話: <a href={`tel:${TEL}`}>{TEL}</a>
+                E-mail: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
               </p>
               <p>
-                メール: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                Phone: <a href={`tel:${TEL}`}>{TEL}</a>
               </p>
+              <p>Wechat: {TEL}</p>
+              <p>Whatsapp: {TEL}</p>
             </div>
 
             <div className={styles["sec-title"]}>
