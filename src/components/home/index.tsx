@@ -18,7 +18,7 @@ const HeadHeight = 80;
 export default function Home(props: {
   content: Record<string, React.ReactNode>;
 }) {
-  const [error, setError] = useState({ name: "", email: "" });
+  const [error, setError] = useState({ name: "", email: "", content: "" });
   const [loading, setLoading] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [visible, setVisible] = useState(false);
@@ -38,7 +38,7 @@ export default function Home(props: {
   });
 
   const resetError = useMemoizedFn(() => {
-    setError({ name: "", email: "" });
+    setError({ name: "", email: "", content: "" });
     setSubmitError("");
   });
 
@@ -87,6 +87,11 @@ export default function Home(props: {
     if (!params.email) {
       setError((old) => {
         return { ...old, email: "は必須項目です。" };
+      });
+    }
+    if (!params.content) {
+      setError((old) => {
+        return { ...old, content: "は必須項目です。" };
       });
     }
     if (params.name && params.email) {
@@ -138,28 +143,188 @@ export default function Home(props: {
               <Logo></Logo>
               <h3>中国調達時強力なサポート</h3>
             </div>
+            <hr className={styles.hr} />
+            <h4>輸送代行</h4>
+            <hr className={styles.hr} />
             <div className={styles["biz-section"]}>
-              <div className={styles["biz-title"]}>輸送代行</div>
+              {/* <div className={styles["biz-title"]}>輸送代行</div> */}
               <div>
-                <p>
-                  空輸、海輸などのドアツードアの物流サービスプランを提供します。
+                <p
+                  className={styles["with-title"]}
+                  data-title="航空便 Air Cargo"
+                >
+                  ドアツードアのクーリエサービスにより、中国から日本への直接配達サービスを提供します。
                 </p>
-                <p>物流のコストを下げて効率を上げることを求めます。</p>
-                <p>サービスの質が高く、手間がかからないことを追求します。</p>
+                <br />
+                <p className={styles["with-title"]} data-title="船便 Sea Cargo">
+                  ドアトゥドアの船便サービスを提供します。荷物の受託から、船ブッキング・通関・配送まで、全てのプロセスを対応します。
+                </p>
+                <br />
+                <p
+                  className={styles["with-title"]}
+                  data-title="フォワーダーサービス Forwarder Service"
+                >
+                  航空と海上の両方をカバーする多様なサービスから、お客様に最適な輸送プランを提供します。
+                </p>
               </div>
             </div>
 
+            <table className={styles["biz-table"]}>
+              <thead>
+                <tr>
+                  <td colSpan={2}>国際海上輸送サービス</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FCLサービス</td>
+                  <td>ドアツードアのフルコンテナ輸送を世界中に提供します。</td>
+                </tr>
+                <tr>
+                  <td>LCLサービス</td>
+                  <td>小口混載輸送の貨物をグローバルに配送します。</td>
+                </tr>
+                <tr>
+                  <td>特殊コンテナサービス</td>
+                  <td>
+                    通常のコンテナだけでなく、特殊コンテナ・在来船サービスも提供します。
+                  </td>
+                </tr>
+                <tr>
+                  <td>危険品輸送</td>
+                  <td>
+                    危険品・化学品の梱包・保管・国際輸送の一貫手配を提供します。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table className={styles["biz-table"]}>
+              <thead>
+                <tr>
+                  <td colSpan={2}>国際航空輸送サービス</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>危険物輸送</td>
+                  <td>
+                    安全を確保した輸送サービスを提供します。危険品倉庫も完備しています。
+                  </td>
+                </tr>
+                <tr>
+                  <td>保冷品輸送</td>
+                  <td>
+                    温度管理が必要な多様な商材に対応します。保冷剤の梱包も可能です。
+                  </td>
+                </tr>
+                <tr>
+                  <td>食品輸送</td>
+                  <td>
+                    温度管理が必要な生鮮食品サービス、冷却材の対応、輸出入規制・動植物検疫をサポートします。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table className={styles["biz-table"]}>
+              <thead>
+                <tr>
+                  <td colSpan={2}>輸送以外のサービス</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>輸出梱包</td>
+                  <td>
+                    小物から大型まで、貨物仕様に合わせた輸出梱包サービスを提供します。
+                  </td>
+                </tr>
+                <tr>
+                  <td>設備輸送</td>
+                  <td>
+                    搬出～梱包～通関～船積み～国際輸送～現地搬入までを一貫手配します。
+                  </td>
+                </tr>
+                <tr>
+                  <td>荷主代行サービス</td>
+                  <td>
+                    輸出業務（商品・梱包明細、本船ブッキング情報、信用状、契約書に基づいた輸出船積み手続き、船積み書類作成）を代行します。また、輸入業務（輸入手続き、輸入書類の保管、税関事後調査対応、税関折衝業務代行等）
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <hr className={styles.hr} />
+            <h4>調達代行</h4>
+            <hr className={styles.hr} />
             <div className={styles["biz-section"]}>
-              <div className={styles["biz-title"]}>調達代行</div>
               <div>
-                <p>
-                  調達の要求に応じて、全供給チェーンの追跡サービスを提供します。
-                </p>
-                <p>
-                  新製品の開発、工場の探しと考察、試作品の提供、大量生産の追跡、注文の納品まで。
+                <p
+                  className={styles["with-title"]}
+                  data-title="OEM ( Original Equipment Manufacturer ) サポート"
+                >
+                  自社ブランドや独自デザイン商品の特別発注、生産、国際輸送に関する一貫した代行サービスを提供いたします。以下はOEMで新商品開発における各段階ごとの詳細なサポートを表すチェックリストです。
                 </p>
               </div>
             </div>
+            <table className={styles["biz-table"]}>
+              {/* <thead>
+                <tr>
+                  <td colSpan={2}>1122</td>
+                </tr>
+              </thead> */}
+              <tbody>
+                <tr>
+                  <td>商品リサーチ</td>
+                  <td>
+                    アリババやタオバオにて商品の価格帯、素材、納期、販売状況を調査し、提携工場とのコミュニケーションを通じて必要情報を収集します。
+                  </td>
+                </tr>
+                <tr>
+                  <td>部品サプライヤーリサーチ</td>
+                  <td>
+                    開発予定商品のパッケージ、タグ、付属品などの単独サプライヤー調査と仕入れ価格の交渉を行います。
+                  </td>
+                </tr>
+                <tr>
+                  <td>生産工場のリサーチ＆選定</td>
+                  <td>
+                    部品のサプライヤー選定後、製造工場を調査し、納期、価格、MOQ情報を基に最終工場を選びます。
+                  </td>
+                </tr>
+                <tr>
+                  <td>サンプル加工交渉＆フォローアップ</td>
+                  <td>
+                    サンプル品作成に向けての部品サプライヤーと工場との交渉・調整が重要なため、少量部品の購入と生産を交渉、実行し、完成までフォローアップします。
+                  </td>
+                </tr>
+                <tr>
+                  <td>部品、および製造価格の交渉</td>
+                  <td>
+                    サンプル確認後、初回オーダー数量と納期を見直し、最終見積もりまで調整や交渉を行います。
+                  </td>
+                </tr>
+                <tr>
+                  <td>大量生産開始（正式発注）</td>
+                  <td>
+                    正式発注が行われたら、発注代行などの手続きを行います。
+                  </td>
+                </tr>
+                <tr>
+                  <td>生産開始後のフォローアップ＆納期確認</td>
+                  <td>
+                    生産開始後は進捗状況の確認とフォローアップを継続的に行います。問題が発生した場合は、即座に交渉や介入を行います。
+                  </td>
+                </tr>
+                <tr>
+                  <td>生産済み製品の国内・国際輸送手配</td>
+                  <td>
+                    完成した製品の工場からお客様までの輸送と通関書類作成などを一手に引き受けます。
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
           <section>
@@ -221,7 +386,7 @@ export default function Home(props: {
             <h4 data-title="CONTACT">CONTACT</h4>
             <div className={styles["sec-title"]}>
               <Logo></Logo>
-              <h3>Find Everacel Co., Ltd.</h3>
+              <h3>Everacel Co., Ltd.</h3>
             </div>
             <div>
               <p>
@@ -247,14 +412,14 @@ export default function Home(props: {
                 onChange={onChange}
               >
                 <div className={styles["form-grid"]}>
-                  <div>お名前</div>
+                  <div>お名前 *</div>
                   <div>
                     <input type="text" name="name" maxLength={100} />
                   </div>
                   <div className={styles.error}>{error?.name ?? ""}</div>
                 </div>
                 <div className={styles["form-grid"]}>
-                  <div>メールアドレス</div>
+                  <div>メールアドレス *</div>
                   <div>
                     <input type="text" name="email" maxLength={100} />
                   </div>
@@ -268,11 +433,18 @@ export default function Home(props: {
                   <div></div>
                 </div>
                 <div className={styles["form-grid"]}>
-                  <div>内容</div>
+                  <div>主题</div>
+                  <div>
+                    <input type="text" name="subject" maxLength={100} />
+                  </div>
+                  <div></div>
+                </div>
+                <div className={styles["form-grid"]}>
+                  <div>内容 *</div>
                   <div>
                     <textarea rows={8} name="content" maxLength={800} />
                   </div>
-                  <div></div>
+                  <div className={styles.error}>{error?.content ?? ""}</div>
                 </div>
                 <div className={styles["form-grid"]}>
                   <div></div>
