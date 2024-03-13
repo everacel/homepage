@@ -78,6 +78,9 @@
 .body-main section h4 {
   font-size: 20px;
 }
+.body-main section h5 {
+  font-size: 16px;
+}
 .body-main section p {
   margin: 12px 0;
 }
@@ -239,4 +242,13 @@
 }
 .biz-table tbody tr td:nth-child(2) {
   width: 70%;
+}
+.img-section {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.img-section img {
+  max-width: 100%;
 }

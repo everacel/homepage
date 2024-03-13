@@ -253,10 +253,22 @@ export default function Home(props: {
               </tbody>
             </table>
 
-            <hr
-              className={styles.hr}
-              style={{ marginTop: 24 }}
-            />
+            <div className={styles["img-section"]}>
+              <h5>輸出入取扱サービスのながれ</h5>
+              <img
+                src="/image/forwarding_img07.svg"
+                alt="輸出入取扱サービスのながれ"
+              />
+            </div>
+            <div className={styles["img-section"]}>
+              <h5>輸出入取扱サービス概要</h5>
+              <img
+                src="/image/forwarding_img06.svg"
+                alt="輸出入取扱サービス概要"
+              />
+            </div>
+
+            <hr className={styles.hr} style={{ marginTop: 24 }} />
             <h4>調達代行</h4>
             <hr className={styles.hr} />
             <div className={styles["biz-section"]}>
