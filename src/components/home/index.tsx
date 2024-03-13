@@ -157,7 +157,7 @@ export default function Home(props: {
                 </p>
                 <br />
                 <p className={styles["with-title"]} data-title="船便 Sea Cargo">
-                  ドアトゥドアの船便サービスを提供します。荷物の受託から、船ブッキング・通関・配送まで、全てのプロセスを対応します。
+                  ドアツードアの船便サービスを提供します。荷物の受託から、船ブッキング・通関・配送まで、全てのプロセスを対応します。
                 </p>
                 <br />
                 <p
@@ -178,11 +178,11 @@ export default function Home(props: {
               <tbody>
                 <tr>
                   <td>FCLサービス</td>
-                  <td>ドアツードアのフルコンテナ輸送を世界中に提供します。</td>
+                  <td>ドアツードアのフルコンテナ輸送を提供します。</td>
                 </tr>
                 <tr>
                   <td>LCLサービス</td>
-                  <td>小口混載輸送の貨物をグローバルに配送します。</td>
+                  <td>小口混載輸送の貨物を配送します。</td>
                 </tr>
                 <tr>
                   <td>特殊コンテナサービス</td>
@@ -208,9 +208,7 @@ export default function Home(props: {
               <tbody>
                 <tr>
                   <td>危険物輸送</td>
-                  <td>
-                    安全を確保した輸送サービスを提供します。危険品倉庫も完備しています。
-                  </td>
+                  <td>安全を確保した輸送サービスを提供します。</td>
                 </tr>
                 <tr>
                   <td>保冷品輸送</td>
@@ -221,7 +219,7 @@ export default function Home(props: {
                 <tr>
                   <td>食品輸送</td>
                   <td>
-                    温度管理が必要な生鮮食品サービス、冷却材の対応、輸出入規制・動植物検疫をサポートします。
+                    温度管理が必要な生鮮食品サービス、輸出入規制・動植物検疫をサポートします。
                   </td>
                 </tr>
               </tbody>
@@ -249,13 +247,16 @@ export default function Home(props: {
                 <tr>
                   <td>荷主代行サービス</td>
                   <td>
-                    輸出業務（商品・梱包明細、本船ブッキング情報、信用状、契約書に基づいた輸出船積み手続き、船積み書類作成）を代行します。また、輸入業務（輸入手続き、輸入書類の保管、税関事後調査対応、税関折衝業務代行等）
+                    輸出業務、輸入業務（輸出入船積み手続き、船積み書類作成など）を代行します。
                   </td>
                 </tr>
               </tbody>
             </table>
 
-            <hr className={styles.hr} />
+            <hr
+              className={styles.hr}
+              style={{ marginTop: 24 }}
+            />
             <h4>調達代行</h4>
             <hr className={styles.hr} />
             <div className={styles["biz-section"]}>
@@ -264,16 +265,16 @@ export default function Home(props: {
                   className={styles["with-title"]}
                   data-title="OEM ( Original Equipment Manufacturer ) サポート"
                 >
-                  自社ブランドや独自デザイン商品の特別発注、生産、国際輸送に関する一貫した代行サービスを提供いたします。以下はOEMで新商品開発における各段階ごとの詳細なサポートを表すチェックリストです。
+                  自社ブランドや独自デザイン商品の特別発注、生産、国際輸送に関する一貫した代行サービスを提供いたします。
                 </p>
               </div>
             </div>
             <table className={styles["biz-table"]}>
-              {/* <thead>
+              <thead>
                 <tr>
-                  <td colSpan={2}>1122</td>
+                  <td colSpan={2}>OEMサポート詳細</td>
                 </tr>
-              </thead> */}
+              </thead>
               <tbody>
                 <tr>
                   <td>商品リサーチ</td>
