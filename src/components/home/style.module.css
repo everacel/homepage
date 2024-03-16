@@ -55,6 +55,7 @@
   font-weight: 600;
   cursor: pointer;
   user-select: none;
+  text-decoration: none;
 }
 .menu:hover {
   opacity: 0.8;

@@ -37,6 +37,10 @@ export default function Home(props: {
     }
   });
 
+  const gotoKnowhow = useMemoizedFn(() => {
+    window.open("https://know-how.everacel.com");
+  });
+
   const resetError = useMemoizedFn(() => {
     setError({ name: "", email: "", content: "" });
     setSubmitError("");
@@ -113,6 +117,9 @@ export default function Home(props: {
               <h2>EVERACEL</h2>
             </div>
             <div className={styles.menus}>
+              <div className={styles.menu} onClick={gotoKnowhow}>
+                KNOW-HOW
+              </div>
               <div className={styles.menu} onClick={onTop}>
                 TOP
               </div>
